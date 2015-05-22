@@ -1,7 +1,7 @@
 {
   "name": "animated-cursor",
   "main": "./lib/animated-cursor",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Cursor in editor animate vertical or horizontal.",
   "keywords": [
     "cursor",
