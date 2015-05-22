@@ -9,29 +9,27 @@
 @animated-cursor-min-height: 0.15;
 @animated-cursor-opacity: 0.8;
 
-.is-focused {
-    .animated-cursor {
+.is-focused.animated-cursor {
+    .cursor {
+        opacity: @animated-cursor-opacity;
+        border-style: none;
+        background: @animated-cursor-from;
+        -webkit-animation: 0.8s infinite 0;
+    }
+
+    .cursors.blink-off .cursor {
+        opacity: @animated-cursor-opacity;
+    }
+
+    &.animated-cursor-vertical {
         .cursor {
-            opacity: @animated-cursor-opacity;
-            border-style: none;
-            background: @animated-cursor-from;
-            -webkit-animation: 0.8s infinite 0;
+            -webkit-animation-name: animated-cursor-keyframes-vertical
         }
+    }
 
-        .cursors.blink-off .cursor {
-            opacity: @animated-cursor-opacity;
-        }
-
-        &.animated-cursor-vertical {
-            .cursor {
-                -webkit-animation-name: animated-cursor-keyframes-vertical
-            }
-        }
-
-        &.animated-cursor-horizontal {
-            .cursor {
-                -webkit-animation-name: animated-cursor-keyframes-horizontal
-            }
+    &.animated-cursor-horizontal {
+        .cursor {
+            -webkit-animation-name: animated-cursor-keyframes-horizontal
         }
     }
 }
