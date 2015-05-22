@@ -1,3 +1,6 @@
+## v1.0.4
+* Improvement: Adjust cursor opacity (0.8 -> 0.4).
+
 ## v1.0.3
 * BugFix: Resolve error occured when multi cursor.
 
