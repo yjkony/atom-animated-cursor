@@ -1,0 +1,101 @@
+// The ui-variables file is provided by base themes provided by Atom.
+//
+// See https://github.com/atom/atom-dark-ui/blob/master/styles/ui-variables.less
+// for a full listing of what's available.
+@import "syntax-variables";
+
+@animated-cursor-from: @syntax-result-marker-color-selected;
+@animated-cursor-to: rgba(0,0,0,0);
+@animated-cursor-min-height: 0.15;
+@animated-cursor-opacity: 0.8;
+
+.is-focused {
+    .animated-cursor {
+        .cursor {
+            opacity: @animated-cursor-opacity;
+            border-style: none;
+            background: @animated-cursor-from;
+            -webkit-animation: 0.8s infinite 0;
+        }
+
+        .cursors.blink-off .cursor {
+            opacity: @animated-cursor-opacity;
+        }
+
+        &.animated-cursor-vertical {
+            .cursor {
+                -webkit-animation-name: animated-cursor-keyframes-vertical
+            }
+        }
+
+        &.animated-cursor-horizontal {
+            .cursor {
+                -webkit-animation-name: animated-cursor-keyframes-horizontal
+            }
+        }
+    }
+}
+
+.animated-cursor-gradient-vertical (@frame) {
+    @from: @animated-cursor-from;
+    @to: @animated-cursor-to;
+    @min-height: @animated-cursor-min-height;
+    @threashold: (1 - @min-height) * (1 - (@frame * @frame / 10000)) + @min-height;
+    background: -webkit-gradient(linear, left bottom, left top, from(@from), color-stop(@threashold, @from), color-stop(@threashold, @to), to(@to));
+}
+
+@-webkit-keyframes animated-cursor-keyframes-vertical {
+      0% { .animated-cursor-gradient-vertical(0); }
+      5% { .animated-cursor-gradient-vertical(10); }
+     10% { .animated-cursor-gradient-vertical(20); }
+     15% { .animated-cursor-gradient-vertical(30); }
+     20% { .animated-cursor-gradient-vertical(40); }
+     25% { .animated-cursor-gradient-vertical(50); }
+     30% { .animated-cursor-gradient-vertical(60); }
+     35% { .animated-cursor-gradient-vertical(70); }
+     40% { .animated-cursor-gradient-vertical(80); }
+     45% { .animated-cursor-gradient-vertical(90); }
+     50% { .animated-cursor-gradient-vertical(100); }
+     55% { .animated-cursor-gradient-vertical(90); }
+     60% { .animated-cursor-gradient-vertical(80); }
+     65% { .animated-cursor-gradient-vertical(70); }
+     70% { .animated-cursor-gradient-vertical(60); }
+     75% { .animated-cursor-gradient-vertical(50); }
+     80% { .animated-cursor-gradient-vertical(40); }
+     85% { .animated-cursor-gradient-vertical(30); }
+     90% { .animated-cursor-gradient-vertical(20); }
+     95% { .animated-cursor-gradient-vertical(10); }
+    100% { .animated-cursor-gradient-vertical(0); }
+}
+
+.animated-cursor-gradient-horizontal (@frame) {
+    @from: @animated-cursor-from;
+    @to: @animated-cursor-to;
+    @min-height: @animated-cursor-min-height;
+    @threashold: (1 - @min-height) * (1 - (@frame * @frame / 10000)) + @min-height;
+    background: -webkit-gradient(linear, left top, right top, from(@from), color-stop(@threashold, @from), color-stop(@threashold, @to), to(@to));
+}
+
+@-webkit-keyframes animated-cursor-keyframes-horizontal {
+      0% { .animated-cursor-gradient-horizontal(0); }
+      5% { .animated-cursor-gradient-horizontal(10); }
+     10% { .animated-cursor-gradient-horizontal(20); }
+     15% { .animated-cursor-gradient-horizontal(30); }
+     20% { .animated-cursor-gradient-horizontal(40); }
+     25% { .animated-cursor-gradient-horizontal(50); }
+     30% { .animated-cursor-gradient-horizontal(60); }
+     35% { .animated-cursor-gradient-horizontal(70); }
+     40% { .animated-cursor-gradient-horizontal(80); }
+     45% { .animated-cursor-gradient-horizontal(90); }
+     50% { .animated-cursor-gradient-horizontal(100); }
+     55% { .animated-cursor-gradient-horizontal(90); }
+     60% { .animated-cursor-gradient-horizontal(80); }
+     65% { .animated-cursor-gradient-horizontal(70); }
+     70% { .animated-cursor-gradient-horizontal(60); }
+     75% { .animated-cursor-gradient-horizontal(50); }
+     80% { .animated-cursor-gradient-horizontal(40); }
+     85% { .animated-cursor-gradient-horizontal(30); }
+     90% { .animated-cursor-gradient-horizontal(20); }
+     95% { .animated-cursor-gradient-horizontal(10); }
+    100% { .animated-cursor-gradient-horizontal(0); }
+}

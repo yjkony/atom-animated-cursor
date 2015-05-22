@@ -1,0 +1,17 @@
+{
+  "name": "animated-cursor",
+  "main": "./lib/animated-cursor",
+  "version": "0.0.0",
+  "description": "Setup cursor animation",
+  "keywords": [
+      "cursor",
+      "animation"
+  ],
+  "repository": "https://github.com/yjkony/animated-cursor",
+  "license": "MIT",
+  "engines": {
+    "atom": "*"
+  },
+  "dependencies": {
+  }
+}
