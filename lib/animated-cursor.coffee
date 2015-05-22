@@ -15,7 +15,6 @@ module.exports = AnimatedCursor =
 
   init: (textEditor) ->
     direction = atom.config.get 'animated-cursor.animationDirection'
-    textEditor.onDidAddCursor AnimatedCursor.init
     textEditorView = atom.views.getView textEditor
     shadowEditor = textEditorView.shadowRoot.querySelector('.editor--private')
     shadowEditor.classList.add 'animated-cursor' unless shadowEditor.classList.contains 'animated-cursor'
