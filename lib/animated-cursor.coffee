@@ -16,13 +16,24 @@ module.exports = AnimatedCursor =
   init: (textEditor) ->
     direction = atom.config.get 'animated-cursor.animationDirection'
     textEditorView = atom.views.getView textEditor
-    shadowEditor = textEditorView.shadowRoot.querySelector('.editor--private')
-    shadowEditor.classList.add 'animated-cursor' unless shadowEditor.classList.contains 'animated-cursor'
-    shadowEditor.classList.add 'animated-cursor-' + direction
+
+    if textEditorView.shadowRoot
+        shadowEditor = textEditorView.shadowRoot.querySelector('.editor--private')
+        classList = shadowEditor.classList
+    else
+        classList = textEditorView.classList
+
+    classList.add 'animated-cursor' unless classList.contains 'animated-cursor'
+    classList.add 'animated-cursor-' + direction
 
   updateDirection: (event) ->
     for textEditor in atom.workspace.getTextEditors()
       textEditorView = atom.views.getView textEditor
-      shadowEditor = textEditorView.shadowRoot.querySelector('.editor--private')
-      shadowEditor.classList.remove 'animated-cursor-' + event.oldValue
-      shadowEditor.classList.add 'animated-cursor-' + event.newValue
+
+      if textEditorView.shadowRoot
+          classList = textEditorView.shadowRoot.querySelector('.editor--private')
+      else
+          classList = textEditorView.classList
+
+      classList.remove 'animated-cursor-' + event.oldValue
+      classList.add 'animated-cursor-' + event.newValue
