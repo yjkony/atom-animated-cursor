@@ -1,3 +1,6 @@
+## v1.0.6
+* BugFix: Failed to change Animation Direction when already exists editor tab enabled shadow dom.
+
 ## v1.0.5
 * BugFix: Resolve error occurred when not using Shadow Dom.
 
