@@ -1,3 +1,6 @@
+## v1.0.7
+* BugFix: Modify css animation properties.
+
 ## v1.0.6
 * BugFix: Failed to change Animation Direction when already exists editor tab enabled shadow dom.
 
@@ -15,7 +18,7 @@
 * Update README.md (add preview gifs)
 
 ## v1.0.1
-* BugFix: failed to change cursor when splitted pane.
+* BugFix: failed to change cursor when split pane.
 
 ## v1.0.0 - First Release
-* Cursor in editors animate vertical or horizonal.
+* Cursor in editors animate vertical or horizontal.

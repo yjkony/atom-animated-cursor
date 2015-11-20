@@ -14,7 +14,7 @@
         opacity: @animated-cursor-opacity;
         border-style: none;
         background: @animated-cursor-from;
-        -webkit-animation: 0.8s infinite 0;
+        animation: 0.8s infinite;
     }
 
     .cursors.blink-off .cursor {
@@ -23,13 +23,13 @@
 
     &.animated-cursor-vertical {
         .cursor {
-            -webkit-animation-name: animated-cursor-keyframes-vertical
+            animation-name: animated-cursor-keyframes-vertical;
         }
     }
 
     &.animated-cursor-horizontal {
         .cursor {
-            -webkit-animation-name: animated-cursor-keyframes-horizontal
+            animation-name: animated-cursor-keyframes-horizontal;
         }
     }
 }
