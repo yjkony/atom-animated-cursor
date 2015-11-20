@@ -1,4 +1,4 @@
-## v1.0.7
+## v1.0.9
 * BugFix: Modify css animation properties.
 
 ## v1.0.6
