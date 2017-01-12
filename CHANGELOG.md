@@ -1,3 +1,6 @@
+## v1.1.0
+* Fix deprecated calls.
+
 ## v1.0.9
 * BugFix: Modify css animation properties.
 

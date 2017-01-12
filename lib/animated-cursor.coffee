@@ -23,12 +23,7 @@ module.exports = AnimatedCursor =
 
   setEditor: (textEditor, newValue, oldValue) ->
       textEditorView = atom.views.getView textEditor
-
-      if textEditorView.shadowRoot
-        classList = textEditorView.shadowRoot.querySelector('.editor--private').classList
-      else
-        classList = textEditorView.classList
-
+      classList = textEditorView.classList
       classList.add 'animated-cursor' unless classList.contains 'animated-cursor'
       classList.remove 'animated-cursor-' + oldValue if oldValue
       classList.add 'animated-cursor-' + newValue
